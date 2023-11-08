@@ -1,6 +1,6 @@
 /**
  * author: Caterina Ilario
- * github: 
+ * GitHub: https://github.com/cateilario/object-model-js.git
  */
 
 import { openWindow } from "./newWindow.js"; 
