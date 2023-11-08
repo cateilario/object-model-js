@@ -64,17 +64,19 @@ let randomNumber = Math.floor(Math.random() * 101);
 
 const getSeason = (birthDay, birthMonth) => {
 
-    if((birthDay >= 21 && birthMonth === 12) || birthMonth === 1 || birthMonth === 2 || (birthDay < 21 && birthMonth === 3)){
-    return "invierno"
-    }
-    else if((birthDay >= 21 && birthMonth === 3) || birthMonth === 4 || birthMonth === 5 || (birthDay < 21 && birthMonth === 6)){
-    return "primavera"
-    }
-    else if((birthDay >= 21 && birthMonth === 6) || birthMonth === 7 || birthMonth === 8 || (birthDay < 21 && birthMonth === 9)){
-    return "verano"
-    }
-    else if((birthDay >= 21 && birthMonth === 9) || birthMonth === 10 || birthMonth === 11 || (birthDay < 21 && birthMonth === 12)){
-    return "otoño"
+    switch (true) {
+        case (birthDay >= 21 && birthMonth === 12) || birthMonth === 1 || birthMonth === 2 || (birthDay < 21 && birthMonth === 3):
+            return "invierno";
+            break;
+        case (birthDay >= 21 && birthMonth === 3) || birthMonth === 4 || birthMonth === 5 || (birthDay < 21 && birthMonth === 6):
+            return "primavera";
+            break;
+        case (birthDay >= 21 && birthMonth === 6) || birthMonth === 7 || birthMonth === 8 || (birthDay < 21 && birthMonth === 9):
+            return "verano";
+            break;
+        case (birthDay >= 21 && birthMonth === 9) || birthMonth === 10 || birthMonth === 11 || (birthDay < 21 && birthMonth === 12):
+            return "otoño";
+            break;
     }
 }
 
