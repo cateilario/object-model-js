@@ -94,7 +94,20 @@ document.body.innerHTML = `
 <p>El coseno de 180 es: <strong>${cosin180}</strong></p>
 <p>El número mayor de <strong>(${numbers})</strong> es <strong>${greatestNumber}</strong></p>
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
+<hr>
 `
+
+const openWindowBtn = document.createElement("button")
+newBtn.innerText = `Abrir ventana`;
+document.body.appendChild(openWindowBtn)
+
+newBtn.addEventListener("click", () =>{
+    location.replace("/newWindow.html")
+})
+
+const resetBtn = document.createElement("button")
+newBtn.innerText = `Reiniciar`;
+document.body.appendChild(resetBtn)
 
 
 
