@@ -102,7 +102,7 @@ newBtn.innerText = `Abrir ventana`;
 document.body.appendChild(openWindowBtn)
 
 newBtn.addEventListener("click", () =>{
-    location.replace("/newWindow.html")
+    window.open("/newWindow.html", "Ejemplo Nueva Ventana", "width=400, height=400, resizable = false");
 })
 
 const resetBtn = document.createElement("button")
