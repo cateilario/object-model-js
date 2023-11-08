@@ -90,7 +90,7 @@ document.body.innerHTML = `
 <p>Tu nombre menos las 3 primeras letras es: <strong>${nameWithoutLetters}</strong></p>
 <p>Tu nombre todo en mayúsculas es: <strong>${fullNameUpperCase}</strong></p>
 <p>Tu edad es: <strong>${age}</strong></p>
-<p>Naciste un feliz día de <strong>${getSeason(birthDay, birthMonth)}</strong> del año <strong>${birthYear}</strong></p>
+<p>Naciste un feliz día de <strong>${season}</strong> del año <strong>${birthYear}</strong></p>
 <p>El coseno de 180 es: <strong>${cosin180}</strong></p>
 <p>El número mayor de <strong>(${numbers})</strong> es <strong>${greatestNumber}</strong></p>
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
