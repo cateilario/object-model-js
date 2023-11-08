@@ -1,9 +1,15 @@
+/**
+ * author: Caterina Ilario
+ * github: 
+ */
+
+import { openWindow } from "./newWindow.js"; 
+
 let name, lastName, birthDay, birthMonth, birthYear;
 
 do {
     name = prompt(`Introduzca su nombre`);
     if (!name || !isNaN(name)) {
-        condition = false;
         alert(`Nombre no válido`);
     }
 } while (!name || !isNaN(name));
@@ -37,26 +43,20 @@ do {
 } while (isNaN(birthYear) || birthYear === "" || birthYear > 2023);
 
 
-/*const name = prompt(`Introduzca su nombre`)
-const lastName = prompt(`Introduzca sus apellidos`)
-const birthDay = parseInt(prompt(`Introduzca su dia nacimiento`))
-const birthMonth = parseInt(prompt(`Introduzca su mes nacimiento`))
-const birthYear = parseInt(prompt(`Introduzca su año nacimiento`))
-*/
-
 let fullName = name.concat(" ", lastName)
 let fullNameUpperCase = fullName.toUpperCase()
 let lengthName = fullName.length;
-let searchedChar = "A".toLowerCase()
-let firstA = fullName.indexOf(searchedChar)
-let lastA = fullName.lastIndexOf(searchedChar)
+let searchedChar = "A"
+let searchedCharLowerCase = searchedChar.toLowerCase()
+let firstA = fullName.toLowerCase().indexOf(searchedCharLowerCase) + 1
+let lastA = fullName.toLowerCase().lastIndexOf(searchedCharLowerCase) + 1
 let nameWithoutLetters = fullName.slice(3)
 
 let birthDayDate = new Date(birthYear, birthMonth - 1, birthDay);
 let currentDate = new Date();
 let age = currentDate.getFullYear() - birthDayDate.getFullYear();
 
-let cosin180 = Math.cos(180);
+let cosin180 = Math.cos(180 * Math.PI / 180);
 let numbers = [34, 67, 23, 75, 35, 19]
 let greatestNumber = Math.max(...numbers)
 let randomNumber = Math.floor(Math.random() * 101);
@@ -83,31 +83,34 @@ let season = getSeason(birthDay, birthMonth)
 document.body.innerHTML = `
 <h1>PRÁCTICA 3 - DWEC</h1>
 <hr>
-<p>Buenos días <strong>${name}</strong></p>
-<p>Tu nombre tiene <strong>${lengthName}</strong> caracteres, incluidos espacios.</p>
-<p>La primera letra <strong>${searchedChar}</strong> está en la posición <strong>${firstA}</strong></p>
-<p>La última letra <strong>${searchedChar}</strong> está en la posición <strong>${lastA}</strong></p>
-<p>Tu nombre menos las 3 primeras letras es: <strong>${nameWithoutLetters}</strong></p>
-<p>Tu nombre todo en mayúsculas es: <strong>${fullNameUpperCase}</strong></p>
-<p>Tu edad es: <strong>${age}</strong></p>
+<p>Buenos días, <strong>${name}</strong></p>
+<p>Tu nombre completo (nombre y apellidos) tiene <strong>${lengthName}</strong> caracteres, incluidos espacios.</p>
+<p>La <strong>primera letra '${searchedChar}'</strong> está en la posición <strong>${firstA}</strong></p>
+<p>La <strong>última letra 'A'</strong> está en la posición <strong>${lastA}</strong></p>
+<p>Tu nombre <strong>menos las 3 primeras letras</strong> es: <strong>${nameWithoutLetters}</strong></p>
+<p>Tu nombre todo en <strong>MAYÚSCULAS</strong> es: <strong>${fullNameUpperCase}</strong></p>
+<p>Tu edad es: <strong>${age}</strong> años</p>
 <p>Naciste un feliz día de <strong>${season}</strong> del año <strong>${birthYear}</strong></p>
-<p>El coseno de 180 es: <strong>${cosin180}</strong></p>
+<p>El <strong>coseno de 180</strong> es: <strong>${cosin180}</strong></p>
 <p>El número mayor de <strong>(${numbers})</strong> es <strong>${greatestNumber}</strong></p>
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
 <hr>
 `
 
+
 const openWindowBtn = document.createElement("button")
-newBtn.innerText = `Abrir ventana`;
+openWindowBtn.innerText = `Abrir ventana`;
 document.body.appendChild(openWindowBtn)
 
-newBtn.addEventListener("click", () =>{
-    window.open("/newWindow.html", "Ejemplo Nueva Ventana", "width=400, height=400, resizable = false");
-})
+openWindowBtn.addEventListener("click", openWindow)
 
 const resetBtn = document.createElement("button")
-newBtn.innerText = `Reiniciar`;
+resetBtn.innerText = `Reiniciar`;
 document.body.appendChild(resetBtn)
+
+resetBtn.addEventListener("click", () => {
+    location.reload();
+})
 
 
 
