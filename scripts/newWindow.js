@@ -1,5 +1,6 @@
 export const openWindow = () => {
-    const newWindow = window.open("/newWindow.html", "nuevaVentana", "height=800,width=1000,resizable=no");
+    const newWindow = window.open('/newWindow.html', 'nuevaVentana', 'menubar=false, toolbar=false, location=false, directories=false, resizable=false, height=800, width=1000');
+    newWindow.focus()
 
 newWindow.onload = () =>{
     const windowURL = newWindow.location.href
