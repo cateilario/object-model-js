@@ -37,10 +37,10 @@ do {
 
 do {
     birthYear = prompt(`Introduzca su año de nacimiento`);
-    if (isNaN(birthYear) || birthYear === "" || birthYear > 2023) {
+    if (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0) {
         alert(`Año de nacimiento no válido`);
     }
-} while (isNaN(birthYear) || birthYear === "" || birthYear > 2023);
+} while (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0);
 
 
 let fullName = name.concat(" ", lastName)
@@ -98,7 +98,6 @@ document.body.innerHTML = `
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
 <hr>
 `
-
 
 const openWindowBtn = document.createElement("button")
 openWindowBtn.innerText = `Abrir ventana`;
