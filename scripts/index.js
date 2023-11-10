@@ -63,7 +63,6 @@ let randomNumber = Math.floor(Math.random() * 101);
 
 
 const getSeason = (birthDay, birthMonth) => {
-
     switch (true) {
         case (birthDay >= 21 && birthMonth === 12) || birthMonth === 1 || birthMonth === 2 || (birthDay < 21 && birthMonth === 3):
             return "invierno";
