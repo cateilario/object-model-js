@@ -7,6 +7,7 @@ import { openWindow } from "./newWindow.js";
 
 let name, lastName, birthDay, birthMonth, birthYear;
 
+// Bucle do-while para que nos pida introducir las variables hasta hacerlo bien.
 do {
     name = prompt(`Introduzca su nombre`);
     if (!name || !isNaN(name)) {
@@ -36,12 +37,11 @@ do {
 } while (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12 || birthDay > 29 && birthMonth === 2 || birthDay === 31 && (birthMonth === 4 || birthMonth === 6 || birthMonth === 9 || birthMonth === 11));
 
 do {
-    birthYear = prompt(`Introduzca su año de nacimiento`);
+    birthYear = parseInt(prompt(`Introduzca su año de nacimiento`));
     if (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0) {
         alert(`ERROR: Año no válido`);
     }
 } while (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0)
-
 
 let fullName = name.concat(" ", lastName)
 let fullNameUpperCase = fullName.toUpperCase()
@@ -57,6 +57,7 @@ let numbers = [34, 67, 23, 75, 35, 19]
 let greatestNumber = Math.max(...numbers)
 let randomNumber = Math.floor(Math.random() * 101);
 
+// Función para calcular la edad
 const getAge = (birthDay, birthMonth, birthYear) => {
     let currentDate = new Date();
     let currentDay = currentDate.getDate();
@@ -70,6 +71,7 @@ const getAge = (birthDay, birthMonth, birthYear) => {
     return age;
 }
 
+// Función para obtener la estación del año y asignamos la función a la variable season
 const getSeason = (birthDay, birthMonth) => {
     switch (true) {
         case (birthDay >= 21 && birthMonth === 12) || birthMonth === 1 || birthMonth === 2 || (birthDay < 21 && birthMonth === 3):
@@ -89,6 +91,7 @@ const getSeason = (birthDay, birthMonth) => {
 
 let season = getSeason(birthDay, birthMonth)
 
+// Sacar por pantalla body del HTML con los resultados
 document.body.innerHTML = `
 <h1>PRÁCTICA 3 - DWEC</h1>
 <hr>
@@ -105,16 +108,20 @@ document.body.innerHTML = `
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
 <hr>
 `
+// Cambiar la fuente del HTML 
 document.body.style.fontFamily = "Arial";
 
+// Crear botones y enlazarles una función
 const openWindowBtn = document.createElement("button")
 openWindowBtn.innerText = `Abrir ventana`;
+openWindowBtn.style.padding = "5px"
 document.body.appendChild(openWindowBtn)
 
 openWindowBtn.addEventListener("click", openWindow)
 
 const resetBtn = document.createElement("button")
 resetBtn.innerText = `Reiniciar`;
+resetBtn.style.padding = "5px"
 document.body.appendChild(resetBtn)
 
 resetBtn.addEventListener("click", () => {
