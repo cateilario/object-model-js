@@ -15,6 +15,8 @@ newWindow.onload = () =>{
     <br>
     `)
 
+    newWindow.document.body.style.fontFamily = "Arial";
+
     const closeBtn = newWindow.document.createElement("button")
     closeBtn.innerText = "Cerrar Ventana"
     newWindow.document.body.appendChild(closeBtn)

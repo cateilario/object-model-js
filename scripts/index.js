@@ -52,15 +52,23 @@ let firstA = fullName.toLowerCase().indexOf(searchedCharLowerCase) + 1
 let lastA = fullName.toLowerCase().lastIndexOf(searchedCharLowerCase) + 1
 let nameWithoutLetters = fullName.slice(3)
 
-let birthDayDate = new Date(birthYear, birthMonth - 1, birthDay);
-let currentDate = new Date();
-let age = currentDate.getFullYear() - birthDayDate.getFullYear();
-
 let cosin180 = Math.cos(180 * Math.PI / 180);
 let numbers = [34, 67, 23, 75, 35, 19]
 let greatestNumber = Math.max(...numbers)
 let randomNumber = Math.floor(Math.random() * 101);
 
+const getAge = (birthDay, birthMonth, birthYear) => {
+    let currentDate = new Date();
+    let currentDay = currentDate.getDate();
+    let currentMonth = currentDate.getMonth() + 1;
+    let age = currentDate.getFullYear() - birthYear;
+
+    if((currentMonth === birthMonth && currentDay < birthDay) || currentMonth < birthMonth){
+        age--;
+    }
+
+    return age;
+}
 
 const getSeason = (birthDay, birthMonth) => {
     switch (true) {
@@ -90,13 +98,14 @@ document.body.innerHTML = `
 <p>La <strong>última letra 'A'</strong> está en la posición <strong>${lastA}</strong></p>
 <p>Tu nombre <strong>menos las 3 primeras letras</strong> es: <strong>${nameWithoutLetters}</strong></p>
 <p>Tu nombre todo en <strong>MAYÚSCULAS</strong> es: <strong>${fullNameUpperCase}</strong></p>
-<p>Tu edad es: <strong>${age}</strong> años</p>
+<p>Tu edad es: <strong>${getAge(birthDay, birthMonth, birthYear)}</strong> años.</p>
 <p>Naciste un feliz día de <strong>${season}</strong> del año <strong>${birthYear}</strong></p>
 <p>El <strong>coseno de 180</strong> es: <strong>${cosin180}</strong></p>
 <p>El número mayor de <strong>(${numbers})</strong> es <strong>${greatestNumber}</strong></p>
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
 <hr>
 `
+document.body.style.fontFamily = "Arial";
 
 const openWindowBtn = document.createElement("button")
 openWindowBtn.innerText = `Abrir ventana`;
