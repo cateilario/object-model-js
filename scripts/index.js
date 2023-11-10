@@ -30,10 +30,10 @@ do {
 
 do {
     birthMonth = parseInt(prompt(`Introduzca su mes de nacimiento`));
-    if (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth >12) {
+    if (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12 || ((birthDay === 30 || birthDay === 31)) && birthMonth === 2) {
         alert(`Mes de nacimiento no válido`);
     }
-} while (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12);
+} while (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12 || ((birthDay === 30 || birthDay === 31)) && birthMonth === 2);
 
 do {
     birthYear = prompt(`Introduzca su año de nacimiento`);
