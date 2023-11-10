@@ -10,35 +10,35 @@ let name, lastName, birthDay, birthMonth, birthYear;
 do {
     name = prompt(`Introduzca su nombre`);
     if (!name || !isNaN(name)) {
-        alert(`Nombre no válido`);
+        alert(`ERROR: Nombre no válido`);
     }
 } while (!name || !isNaN(name));
 
 do {
     lastName = prompt(`Introduzca sus apellidos`);
     if (!lastName || !isNaN(lastName)) {
-        alert(`Apellidos no válidos`);
+        alert(`ERROR: Apellidos no válidos`);
     }
 } while (!lastName || !isNaN(lastName));
 
 do {
     birthDay = parseInt(prompt(`Introduzca su día de nacimiento`));
     if (isNaN(birthDay) || birthDay === "" || birthDay < 1 || birthDay > 31) {
-        alert(`Día de nacimiento no válido`);
+        alert(`ERROR: Día no válido`);
     }
 } while (isNaN(birthDay) || birthDay === "" || birthDay < 1 || birthDay > 31);
 
 do {
     birthMonth = parseInt(prompt(`Introduzca su mes de nacimiento`));
     if (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12 || ((birthDay === 30 || birthDay === 31)) && birthMonth === 2) {
-        alert(`Mes de nacimiento no válido`);
+        alert(`ERROR: Mes no válido`);
     }
 } while (isNaN(birthMonth) || birthMonth === "" || birthMonth < 1 || birthMonth > 12 || ((birthDay === 30 || birthDay === 31)) && birthMonth === 2);
 
 do {
     birthYear = prompt(`Introduzca su año de nacimiento`);
     if (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0) {
-        alert(`Año de nacimiento no válido`);
+        alert(`ERROR: Año no válido`);
     }
 } while (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0)
 
