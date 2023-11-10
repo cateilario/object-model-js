@@ -40,7 +40,7 @@ do {
     if (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0) {
         alert(`Año de nacimiento no válido`);
     }
-} while (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0);
+} while (isNaN(birthYear) || birthYear === "" || birthYear > 2023 || birthYear <= 0)
 
 
 let fullName = name.concat(" ", lastName)
@@ -51,8 +51,8 @@ let searchedCharLowerCase = searchedChar.toLowerCase()
 let firstA = fullName.toLowerCase().indexOf(searchedCharLowerCase) + 1
 let lastA = fullName.toLowerCase().lastIndexOf(searchedCharLowerCase) + 1
 let nameWithoutLetters = fullName.slice(3)
-
-let cosin180 = Math.cos(180 * Math.PI / 180);
+let number = 180;
+let cos = Math.cos(number * Math.PI / number);
 let numbers = [34, 67, 23, 75, 35, 19]
 let greatestNumber = Math.max(...numbers)
 let randomNumber = Math.floor(Math.random() * 101);
@@ -100,7 +100,7 @@ document.body.innerHTML = `
 <p>Tu nombre todo en <strong>MAYÚSCULAS</strong> es: <strong>${fullNameUpperCase}</strong></p>
 <p>Tu edad es: <strong>${getAge(birthDay, birthMonth, birthYear)}</strong> años.</p>
 <p>Naciste un feliz día de <strong>${season}</strong> del año <strong>${birthYear}</strong></p>
-<p>El <strong>coseno de 180</strong> es: <strong>${cosin180}</strong></p>
+<p>El <strong>coseno de ${number}</strong> es: <strong>${cos}</strong></p>
 <p>El número mayor de <strong>(${numbers})</strong> es <strong>${greatestNumber}</strong></p>
 <p>Ejemplo de número al azar entre 0 y 100: <strong>${randomNumber}</strong></p>
 <hr>
